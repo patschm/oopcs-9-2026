@@ -34,14 +34,15 @@ class Program
         const int MAX_ATTEMPTS = 5;
 
         int attempt;
-        for (attempt = 1; attempt <= MAX_ATTEMPTS; attempt++)
+        for (attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) 
         {
+            //Console.WriteLine("{0}e beurt. Geef een woord", attempt);
             Console.WriteLine($"{attempt}e beurt. Geef een woord");
             string? guess = Console.ReadLine();
             if (guess?.Length != MAX_WORD_LENGTH)
             {
                 Console.WriteLine("Ongeldig woord");
-                continue;
+               continue;
             }
             if (guess == wordToBeGuessed)
             {
