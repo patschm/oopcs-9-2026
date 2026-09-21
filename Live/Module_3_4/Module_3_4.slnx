@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Dagen/Dagen.csproj" />
+  <Project Path="VirtualWorld/VirtualWorld.csproj" />
+</Solution>

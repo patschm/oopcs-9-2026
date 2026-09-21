@@ -44,7 +44,10 @@ class Program
 
         Console.ReadLine();
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="attempt"></param>
      static void ShowIQ(int attempt)
     {
         switch (attempt)
