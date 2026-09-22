@@ -8,7 +8,7 @@
 //   and assigns it to the array of LingoCharacters (internalWord)
 public class LingoWord
 {
-    public  LingoCharacter[] internalWord;
+    public readonly LingoCharacter[] internalWord;
 
     public void Show()
     {
@@ -24,8 +24,10 @@ public class LingoWord
     }
     public bool AreEqual(LingoWord guess)
     {
+       // guess.Equals(guess)
         for(int i = 0; i < internalWord.Length; i++ )
         {
+           // this.internalWord.Equals(guess.internalWord);
             if (guess.internalWord[i].character != this.internalWord[i].character)
             {                  
                 return false;
@@ -36,6 +38,7 @@ public class LingoWord
     public LingoWord(string word)
     {
         this.internalWord = new LingoCharacter[word.Length];
+    
         
         for(int i = 0; i < word.Length;i++)
         {
