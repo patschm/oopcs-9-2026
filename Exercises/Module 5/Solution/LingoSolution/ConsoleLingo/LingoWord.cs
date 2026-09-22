@@ -77,3 +77,29 @@ public class LingoWord
         }
     }
 }
+
+
+static class Extensions
+{
+    public static bool AreEqual(this LingoWord wordToBeGuessed, LingoWord guess)
+    {
+        bool[] correctPositions = new bool[wordToBeGuessed.Count];
+        for (int i = 0; i < guess.Count; i++)
+        {
+            correctPositions[i] = LingoCharacter.AreExactlyEqual(guess[i], wordToBeGuessed[i]);
+        }
+        return IsWordCorrect(correctPositions);
+    }
+
+    private static bool IsWordCorrect(bool[] correctPositions)
+    {
+        foreach (bool isGuessed in correctPositions)
+        {
+            if (!isGuessed)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}

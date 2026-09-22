@@ -15,6 +15,7 @@ class Program
 
     static void Main(string[] args)
     {
+        //var t = new LingoCharacter
         LingoWord wordToBeGuessed = GenerateWord();
 #if DEBUG
         wordToBeGuessed.Show();
@@ -25,6 +26,7 @@ class Program
             LingoWord guess = AskWord(attempt);
             if (!IsValidInput(guess)) continue;
             bool isGuessed = LingoWord.AreEqual(wordToBeGuessed, guess);
+           // bool isGuessed = wordToBeGuessed.AreEqual(guess);
             guess.Show();
             if (isGuessed)
             {
