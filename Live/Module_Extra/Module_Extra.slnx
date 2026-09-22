@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Afas.Service.Calculator/Afas.Service.Calculator.csproj" />
+  <Project Path="Magazijn/Magazijn.csproj" />
+  <Project Path="PuntenPlan/PuntenPlan.csproj" Id="cd274b76-c5c0-4881-be27-1c126d6314cf" />
+  <Project Path="TheClient/TheClient.csproj" />
+</Solution>
