@@ -40,7 +40,9 @@ public class LingoWord : IEnumerable
         }
         Console.WriteLine();
     }
-    public static void Examine(LingoWord targetWord, LingoWord guess)
+    
+    public static void Examine(LingoWord targetWord, LingoWord scrabbleBalkje)
+    //public static LingoWord Examine(LingoWord targetWord, LingoWord guess)
     {
         // CharCounter is class that keeps list of all characters in a LingoWord and how often they appear.
         // Use IsCharacterInWord(lingCharacter) to test if a character exists in the list.
@@ -54,22 +56,25 @@ public class LingoWord : IEnumerable
         // If the character is part of the word but not in the right place a PartialCharacter at that position in the resulting LingoWord
         // If the character is not part of the word you place a LingoCharacter at that position in the resulting LingoWord
         // Hint: First check for the exact characters, then for the partial characters
-        for (int i = 0; i < guess.Count; i++)
+        for (int i = 0; i < scrabbleBalkje.Count; i++)
         {
-            LingoCharacter guessChar = guess[i]!;
+            //LingoCharacter guessChar = resulting[i]!;
+            LingoCharacter guessChar = scrabbleBalkje[i]!;
             foreach (LingoCharacter targetChar in targetWord)
             {
                 if (LingoCharacter.ExactlyEqual(targetChar, guessChar))
                 {
                     counter.DecrementCharacterCount(targetChar);
-                    guess[i] = ExactCharacter.Create(guessChar.Character, guessChar.Position);
+                    //resulting[i] = ExactCharacter.Create(guessChar.Character, guessChar.Position);
+                    scrabbleBalkje[i] = ExactCharacter.Create(guessChar.Character, guessChar.Position);
                 }
             }
         }
 
-        for (int i = 0; i < guess.Count; i++)
+        for (int i = 0; i < scrabbleBalkje.Count; i++)
         {
-            LingoCharacter guessChar = guess[i]!;
+            //LingoCharacter guessChar = resulting[i]!;
+            LingoCharacter guessChar = scrabbleBalkje[i]!;
             foreach (LingoCharacter thisChar in targetWord)
             {
                 if (!guessChar.IsExact() &&
@@ -77,10 +82,12 @@ public class LingoWord : IEnumerable
                     LingoCharacter.PartialEqual(thisChar, guessChar))
                 {
                     counter.DecrementCharacterCount(thisChar);
-                    guess[i] = PartialCharacter.Create(guessChar.Character, guessChar.Position);
+                    scrabbleBalkje[i] = PartialCharacter.Create(guessChar.Character, guessChar.Position);
+                    //resulting[i] = PartialCharacter.Create(guessChar.Character, guessChar.Position);
                 }
             }
         }
+        //return resulting;
     }
    
     /// <summary>

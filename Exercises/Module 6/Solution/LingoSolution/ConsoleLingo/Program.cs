@@ -24,6 +24,7 @@ class Program
         {
             LingoWord guess = AskWord(attempt);
             if (!IsValidInput(guess)) continue;
+            //guess = LingoWord.Examine(wordToBeGuessed, guess);
             LingoWord.Examine(wordToBeGuessed, guess);
             bool isGuessed = guess.IsGuessed();
             guess.Show();
