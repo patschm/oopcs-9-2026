@@ -16,12 +16,25 @@ class Program
         var camera = new Camera();
         var valkuil = new Valkuil();
 
-        lus.Connect(hek);
-        lus.Connect(valkuil);
-        lus.Connect(lamp);
-        lus.Connect(camera);     
+        // Interfaces
+        //lus.Connect(hek);
+        //lus.Connect(valkuil);
+        //lus.Connect(lamp);
+        //lus.Connect(camera);
 
-        lus.Detect();
+        // Delegates
+        lus.Connect(hek.Open);
+        lus.Connect(valkuil.Open);
+        lus.Connect(lamp.TurnOn);
+        lus.Connect(camera.Start);
+
+        // Events
+        lus.Detect += hek.Open;
+        lus.Detect += valkuil.Open;
+        lus.Detect += lamp.TurnOn;
+        lus.Detect += camera.Start;
+
+        lus.Detecteer();
     }
     
 }

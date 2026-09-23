@@ -12,5 +12,6 @@ public class Lamp : IDetectable
     public void TurnOn()
 {
     Console.WriteLine("Lamp is aan.");
+    
 }
 }

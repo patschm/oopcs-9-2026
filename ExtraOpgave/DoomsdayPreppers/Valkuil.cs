@@ -12,5 +12,6 @@ public class Valkuil: IDetectable
     public void Open()
     {
         Console.WriteLine("Valkuil is open.");
+        throw new Exception("Ooops");
     }
 }
