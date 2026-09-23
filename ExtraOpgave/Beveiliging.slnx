@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="DoomsdayPreppers/DoomsdayPreppers.csproj" />
+  <Project Path="Heras/Heras.csproj" />
+  <Project Path="Oprijlaan/Oprijlaan.csproj" />
+  <Project Path="Philips/Philips.csproj" />
+  <Project Path="Sony/Sony.csproj" />
+  <Project Path="Standaarden/Standaarden.csproj" />
+  <Project Path="Yunex/Yunex.csproj" />
+</Solution>
